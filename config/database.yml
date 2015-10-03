@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: hackathon_development
+
+test:
+  <<: *default
+  database: hackathon_test
+
+production:
+  <<: *default
+  database: hackathon_production
+  username: hackathon
+  password: <%= ENV['HACKATHON_DATABASE_PASSWORD'] %>
