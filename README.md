@@ -7,10 +7,10 @@ integrate with the blog's content. Publishers will earn more per click, since co
 be higher because the content of the blog adds value to the product that the advertiser tries to sell.
 
 ## Who are we
-### @zenry – Henry Louwhoff
+#### [@zenry](https://github.com/zenry) – Henry Louwhoff
 **`// TODO: Add description`**
 
-### @jeroenvisser101 – Jeroen Visser
+#### [@jeroenvisser101](https://github.com/jeroenvisser101) – Jeroen Visser
 Hi, I'm Jeroen, I'm a developer at [SEOshop](http://seoshop.com/) and have worked in eCommerce for quite
 a while now. I've started programming since I was 8 years old, and have loved it ever since. At first, I
 started because my father was coding too, and I really wanted to do it too. He was very willing to teach
