@@ -1,4 +1,10 @@
-/.bundle
-/log/*
-!/log/.keep
+/log
 /tmp
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/system
+/public/assets/**
+**.orig
+
+/.bundle
+/vendor/bundle
