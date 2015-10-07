@@ -38,4 +38,13 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Setup BetterError links to open in RubyMine
+  BetterErrors.editor='x-mine://open?file=%{file}&line=%{line}' if defined? BetterErrors
+
+  # Mail
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Asset url's
+  config.action_controller.asset_host = 'http://localhost:3000'
 end
