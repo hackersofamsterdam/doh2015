@@ -11,6 +11,7 @@ gem 'money-rails'
 gem 'kaminari'
 gem 'wisper'
 gem 'simple_form'
+gem 'devise'
 
 gem 'sass-rails', '~> 5.0'
 gem 'compass'
