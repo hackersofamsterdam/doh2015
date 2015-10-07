@@ -21,6 +21,8 @@ gem 'sprockets-es6'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'bootstrap-sass'
+gem 'jquery-turbolinks'
 
 group :development, :test do
   gem 'byebug'
