@@ -1,12 +1,12 @@
-module HashaId
+module Tokenizable
   extend ActiveSupport::Concern
 
-  def hash_id
+  def token
     Hashids.new(hash_ids_salt, 16).encode self.id
   end
 
-  def find_by_hash_id(hash_id)
-    outcome = Hashids.new(hash_ids_salt, 16).decode hash_id
+  def find_by_token(token)
+    outcome = Hashids.new(hash_ids_salt, 16).decode token
 
     self.find_by_id outcome.first.to_i
   end
