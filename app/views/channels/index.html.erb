@@ -15,7 +15,7 @@
   <tbody>
     <% @channels.each do |channel| %>
       <tr>
-        <td><%= channel.hash_id %></td>
+        <td><%= channel.token %></td>
         <td><%= channel.name %></td>
         <td><%= channel.url %></td>
         <td><%= link_to 'Show', channel %></td>
