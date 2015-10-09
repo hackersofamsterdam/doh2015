@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Keep hacking. -->
-    <title>Hackers of Amsterdam</title>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <%= yield %>
-
-    <%= render partial: 'global/google_analytics', locals: { ua: 'UA-68104039-1' } unless Rails.env.development? %>
-  </body>
+<head>
+  <!-- Keep hacking. -->
+  <title>Hackers of Amsterdam</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<section class="container">
+  <%= yield %>
+</section>
+<%= render partial: 'global/google_analytics', locals: {ua: 'UA-68104039-1'} unless Rails.env.development? %>
+</body>
 </html>

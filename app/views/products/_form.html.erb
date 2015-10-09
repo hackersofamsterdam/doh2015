@@ -1,8 +1,7 @@
-<%= simple_form_for(@product) do |f| %>
+<%= simple_form_for [@channel, @product] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :channel %>
     <%= f.input :title %>
     <%= f.input :token %>
     <%= f.input :price %>
