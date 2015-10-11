@@ -1,18 +1,34 @@
+#= depend_on helpers/md5
+#= depend_on polyfills/object_keys
+
 class FlippinAds
-  constructor: (@site_key = '') ->
-    $('img').each -> new Image($(this), self)
+  images: {}
+
+  constructor: (@domain, @site_key = '') ->
+    $('img').each -> @register(new Image($(this), self))
+
+  getImageHashes: -> @images.keys()
+  register: (image) -> @images[image.getHash()] = image
+
+  fetchImageData: (cb) ->
+    $.post("#{@domain}/channels/#{@site_key}/images", hashes: @getImageHashes())
+     .done (@data) => cb()
+
 
 class Image
-  constructor: (@image, @flipping_ads) ->
-    return unless @is_eligable()
+  constructor: (@image, @flippin_ads) ->
+    return unless @isEligable()
+    @addEventListeners()
 
-  is_eligable: -> @image.height() >= 300 && @image.width() >= 300
-  add_event_listeners: ->
-    @image.on 'mouseover', @on_mouseover
-    @image.on 'mouseout', @on_mouseout
+  getHash: -> md5(@image.attr('src'))
+  isEligable: -> @image.height() >= 300 && @image.width() >= 300
 
-  on_mouseover: => @image.addClass('fa-image__hover')
-  on_mouseout: => @image.removeClass('fa-image__hover')
+  addEventListeners: ->
+    @image.on 'mouseover', @show()
+    @image.on 'mouseout', @hide()
+
+  show: =>
+    @flippin_ads.getImageData(this)
 
 # Bind to root object
 this.__fa = FlippinAds
