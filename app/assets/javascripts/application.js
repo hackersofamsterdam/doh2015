@@ -4,4 +4,5 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= stub embed
+//= stub helpers
 //= require_tree .
