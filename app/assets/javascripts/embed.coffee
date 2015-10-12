@@ -6,7 +6,9 @@ class FlippinAds
 
   constructor: (@domain, @site_key = '') ->
     $('img').each -> @register(new Image($(this), self))
+    @fetchImageData => @showTooltips()
 
+  showTooltips: -> image.showTooltip() for image of images
   getImageHashes: -> @images.keys()
   register: (image) -> @images[image.getHash()] = image
 
@@ -20,6 +22,8 @@ class Image
     return unless @isEligable()
     @addEventListeners()
 
+  showTooltip: ->
+    # TODO: implement showing of tooltip
   getHash: -> md5(@image.attr('src'))
   isEligable: -> @image.height() >= 300 && @image.width() >= 300
 
