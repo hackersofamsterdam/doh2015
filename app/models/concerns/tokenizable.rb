@@ -1,14 +1,15 @@
+# Tokenizable
 module Tokenizable
   extend ActiveSupport::Concern
 
   def token
-    Hashids.new(hash_ids_salt, 16).encode self.id
+    Hashids.new(hash_ids_salt, 16).encode id
   end
 
   def find_by_token(token)
     outcome = Hashids.new(hash_ids_salt, 16).decode token
 
-    self.find_by_id outcome.first.to_i
+    find_by_id outcome.first.to_i
   end
 
   private

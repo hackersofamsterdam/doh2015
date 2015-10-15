@@ -1,3 +1,4 @@
+# ChannelsController
 class ChannelsController < AdminController
   before_action :set_channel, only: [:show, :edit, :update, :destroy]
 
@@ -40,6 +41,7 @@ class ChannelsController < AdminController
   end
 
   private
+
   def set_channel
     @channel = current_user.channels.find_by_id params[:id]
   end
@@ -47,5 +49,4 @@ class ChannelsController < AdminController
   def channel_params
     params.require(:channel).permit(:name, :url)
   end
-
 end

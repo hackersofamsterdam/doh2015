@@ -1,3 +1,4 @@
+# ProductsController
 class ProductsController < AdminController
   before_action :set_channel
   before_action :set_product, except: [:index]
@@ -20,7 +21,8 @@ class ProductsController < AdminController
     @product = @channel.products.build product_params
 
     if @product.save
-      redirect_to channel_product_path(@channel, @product), notice: 'Product was successfully created.'
+      redirect_to channel_product_path(@channel, @product),
+                  notice: 'Product was successfully created.'
     else
       render :new
     end
@@ -28,7 +30,8 @@ class ProductsController < AdminController
 
   def update
     if @product.update(product_params)
-      redirect_to channel_product_path(@channel, @product), notice: 'Product was successfully updated.'
+      redirect_to channel_product_path(@channel, @product),
+                  notice: 'Product was successfully updated.'
     else
       render :edit
     end
@@ -37,10 +40,12 @@ class ProductsController < AdminController
   def destroy
     @product.destroy
 
-    redirect_to channel_products_path, notice: 'Product was successfully destroyed.'
+    redirect_to channel_products_path,
+                notice: 'Product was successfully destroyed.'
   end
 
   private
+
   def set_channel
     @channel = current_user.channels.find_by_id params[:channel_id]
   end

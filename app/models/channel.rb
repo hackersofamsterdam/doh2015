@@ -1,3 +1,4 @@
+# Channel
 class Channel < ActiveRecord::Base
   include Tokenizable
 
