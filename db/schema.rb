@@ -31,9 +31,9 @@ ActiveRecord::Schema.define(version: 20151007103205) do
     t.datetime "updated_at",                     null: false
     t.integer  "channel_id"
     t.string   "title"
-    t.string   "token"
+    t.string   "image"
     t.integer  "price_cents",    default: 0,     null: false
-    t.string   "price_currency", default: "USD", null: false
+    t.string   "price_currency", default: "EUR", null: false
     t.string   "link"
   end
 

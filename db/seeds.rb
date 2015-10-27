@@ -1,7 +1,22 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+user = User.create email: 'demo@freshswag.xyz', password: 'swagfresh'
+
+channel = user.channels.create name: 'HackerSWAG Blog',
+                               url: 'http://hackersofamsterdam.github.io/hackerswag'
+
+Product.create channel: channel,
+               image: 'http://hackersofamsterdam.github.io/hackerswag/img/apple_ipad.jpg',
+               title: 'Apple iPad Air - 16GB - Zwart',
+               price: Money.new(37_900),
+               link: 'http://www.bol.com/nl/inwinkelwagentje.html?productId=9200000021554263'
+
+Product.create channel: channel,
+               image: 'http://hackersofamsterdam.github.io/hackerswag/img/apple_iphone.jpg',
+               title: 'Apple iPhone 6 - 16GB - Zwart',
+               price: Money.new(63_900),
+               link: 'http://www.bol.com/nl/inwinkelwagentje.html?productId=9200000032845754'
+
+Product.create channel: channel,
+               image: 'http://hackersofamsterdam.github.io/hackerswag/img/apple_macbook.jpg'
+
+Product.create channel: channel,
+               image: 'http://hackersofamsterdam.github.io/hackerswag/img/apple_ipod.jpg'
